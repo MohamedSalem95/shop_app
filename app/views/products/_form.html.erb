@@ -32,6 +32,12 @@
 		<% end %>
 	</div>
 
+	<div class="field mb-2">
+		<%= f.label :image, 'Product Image', class: 'mb-2' %>
+		<%= f.file_field :image,  class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800", placeholder: 'Product Stock Count ..' %>
+		
+	</div>
+
 	<div>
 		<%= f.submit "#{if product.new_record? then 'Save' else 'Update' end}", class: 'px-7 py-3 rounded-lg bg-black text-white cursor-pointer transition hover:bg-gray-800' %>
 	</div>

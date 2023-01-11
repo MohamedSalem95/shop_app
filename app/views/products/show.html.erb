@@ -1,0 +1,26 @@
+<div class="grid grid-cols-5">
+	<div class="col-span-2">
+		<% if @product.image.present? %>
+			<%= image_tag @product.image %>
+		<% else %>
+			<p> No Image </p>
+		<% end %>
+	</div>
+
+	<div>
+		<h2 class="text-xl my-3"> <%= @product.name %> </h2>
+		<p class="text-lg text-gray-500"> <%= @product.description %> </p>
+		<h2 class="text-xl my-3 text-green-600"> $<%= @product.price %> </h2>
+		<%= button_to 'Delete', @product, method: :delete, class: 'text-red-500', data: {confirm: 'Are you sure?'} %>
+	</div>
+
+	<div>
+		<% if @product.stock > 0 %>
+			<p class="text-xl my-3 text-green-600"> Product Avilable </p>
+			<p class="text-xl my-3 text-gray-600"> <%= @product.stock %> in stock </p>
+			<button class="block py-2 px-10 bg-green-600 rounded-lg text-white"> Add to cart </button>
+		<% else %>
+			<p class="text-xl my-3 text-red-600"> Product Not Avilable </p>
+		<% end %>
+	</div>
+</div>
