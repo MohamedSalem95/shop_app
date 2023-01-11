@@ -2,22 +2,34 @@
 	
 	<div class="field mb-2">
 		<%= f.label :name, 'Product Name', class: 'mb-2' %>
-		<%= f.text_field :name, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800", placeholder: 'Product Name ..' %>
+		<%= f.text_field :name, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800 #{ 'border-red-500 focus:border-red-500' if product.errors[:name].any?}", placeholder: 'Product Name ..' %>
+		<% product.errors['name'].each do |error| %>
+			<p class="text-red-500"> <%= error %> </p>
+		<% end %>
 	</div>
 
 	<div class="field mb-2">
-		<%= f.label :description, 'Product Description', class: 'mb-2' %> rounded
-		<%= f.text_area :description, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800", placeholder: 'Product Description ..' %>
+		<%= f.label :description, 'Product Description', class: 'mb-2' %>
+		<%= f.text_area :description, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800 #{ 'border-red-500 focus:border-red-500' if product.errors[:description].any?}", placeholder: 'Product Description ..' %>
+		<% product.errors['description'].each do |error| %>
+			<p class="text-red-500"> <%= error %> </p>
+		<% end %>
 	</div>
 
 	<div class="field mb-2">
 		<%= f.label :price, 'Product Price', class: 'mb-2' %>
-		<%= f.number_field :price, min: 1, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800", placeholder: 'Product Price ..' %>
+		<%= f.number_field :price, min: 1, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800 #{ 'border-red-500 focus:border-red-500' if product.errors[:price].any?}", placeholder: 'Product Price ..' %>
+		<% product.errors['price'].each do |error| %>
+			<p class="text-red-500"> <%= error %> </p>
+		<% end %>
 	</div>
 
 	<div class="field mb-2">
 		<%= f.label :stock, 'Product Stock Count', class: 'mb-2' %>
-		<%= f.number_field :stock, min: 0, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800", placeholder: 'Product Stock Count ..' %>
+		<%= f.number_field :stock, min: 0, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800 #{ 'border-red-500 focus:border-red-500' if product.errors[:stock].any?}", placeholder: 'Product Stock Count ..' %>
+		<% product.errors['stock'].each do |error| %>
+			<p class="text-red-500"> <%= error %> </p>
+		<% end %>
 	</div>
 
 	<div>
