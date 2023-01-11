@@ -11,6 +11,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    
+    <main class="container mx-auto">
+      <%= yield %>
+    </main>
+    
   </body>
 </html>

@@ -1,0 +1,13 @@
+<h3 class="uppercase mb-2"> Latest Products </h3>
+
+<% if @products.any? %>
+	<% @products.each do |product| %>
+		<%= render 'products/product', product: product %>
+	<% end %>
+
+<% else %>
+	<p class="text-gray-500 font-medium">
+		No products here yet, you can create new product
+		<%= link_to 'here.', new_product_path, class: 'text-blue-500 transition hover:text-blue-700' %>
+	</p>
+<% end %>

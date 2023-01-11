@@ -1,0 +1,15 @@
+<div class="product border rounder border-gray-300 p-2">
+	<p> image here </p>
+	<h2 class="text-xl text-gray-600">
+		<%= product.name %>
+	</h2>
+
+	<p>
+		<%= product.description.truncate(50) %>
+	</p>
+
+	<h3 class="text-lg text-green-600">
+		$<%= product.price %>
+	</h3>
+
+</div>
