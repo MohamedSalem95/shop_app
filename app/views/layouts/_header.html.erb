@@ -2,11 +2,17 @@
 	<nav>
 		
 		<div class="container mx-auto flex justify-between">
-			<h2 class="text-lg font-medium"> MyShop </h2>
+			<h2 class="text-lg font-medium"> 
+				<%= link_to 'MyShop', root_path %>
+			</h2>
 
-			<ul>
-				<li>
+			<ul class="flex">
+				<li class="ml-3">
 					<%= link_to 'Home', products_path, class: 'font-medium' %>
+				</li>
+
+				<li class="ml-3">
+					<%= link_to 'New product', new_product_path, class: 'font-medium' %>
 				</li>
 
 			</ul>

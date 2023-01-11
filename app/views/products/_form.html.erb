@@ -1,0 +1,27 @@
+<%= form_with model: product do |f| %>
+	
+	<div class="field mb-2">
+		<%= f.label :name, 'Product Name', class: 'mb-2' %>
+		<%= f.text_field :name, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800", placeholder: 'Product Name ..' %>
+	</div>
+
+	<div class="field mb-2">
+		<%= f.label :description, 'Product Description', class: 'mb-2' %> rounded
+		<%= f.text_area :description, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800", placeholder: 'Product Description ..' %>
+	</div>
+
+	<div class="field mb-2">
+		<%= f.label :price, 'Product Price', class: 'mb-2' %>
+		<%= f.number_field :price, min: 1, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800", placeholder: 'Product Price ..' %>
+	</div>
+
+	<div class="field mb-2">
+		<%= f.label :stock, 'Product Stock Count', class: 'mb-2' %>
+		<%= f.number_field :stock, min: 0, class: "block px-4 py-1 border rounded border-gray-400 outline-none focus:border-gray-800", placeholder: 'Product Stock Count ..' %>
+	</div>
+
+	<div>
+		<%= f.submit "#{if product.new_record? then 'Save' else 'Update' end}", class: 'px-7 py-3 rounded-lg bg-black text-white cursor-pointer transition hover:bg-gray-800' %>
+	</div>
+
+<% end %>

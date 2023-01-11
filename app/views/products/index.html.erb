@@ -1,9 +1,11 @@
 <h3 class="uppercase mb-2"> Latest Products </h3>
 
 <% if @products.any? %>
-	<% @products.each do |product| %>
-		<%= render 'products/product', product: product %>
-	<% end %>
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+		<% @products.each do |product| %>
+			<%= render 'products/product', product: product %>
+		<% end %>
+	</div>
 
 <% else %>
 	<p class="text-gray-500 font-medium">
