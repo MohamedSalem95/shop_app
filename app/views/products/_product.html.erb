@@ -1,6 +1,7 @@
 <div class="product border rounded border-gray-300 p-2">
 	<% if product.image.present? %>
-		<%= image_tag product.image %>
+		<%# image_tag product.image.variant(resize_to_fit: [200, 200]) %>
+		<%= image_tag product.image, width: 250 %>
 	<% else %>
 		<p> No Image Here </p>
 	<% end %>
